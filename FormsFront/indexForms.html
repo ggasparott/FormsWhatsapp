@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Evento</title>
+    <link rel="stylesheet" href="styleForms.css">
+    <script src="script.js"></script>
+
+</head>
+
+<body>
+    <h1>Registro de Eventos</h1>
+    <form action="/submit" method="post">
+        <label for="name">Nome*:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+
+        <label for="email">Email*:</label>
+        <input type="email" id="email" name="email" required placeholder="exemplo@dominio.com"
+            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$" oninput=""><br><br>
+            
+        <label for="confirm-email">Confirme seu Email*:</label>
+        <input type="email" id="confirm-email" name="confirm-email" required placeholder="exemplo@dominio.com"
+            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$"  ><br><br>
+
+        <label for="phone">Número de Telefone:</label>
+        <input type="tel" id="phone" name="phone" required placeholder="(XX) XXXX-XXXX"><br><br>
+
+        <label for="event">Evento:</label>
+        <select id="event" name="event" required>
+            <option value="conference">Conference</option>
+            <option value="workshop">Workshop</option>
+            <option value="seminar">Seminar</option>
+        </select><br><br>
+
+        <label for="date">Data do Evento:</label>
+        <input type="date" id="date" name="date" required><br><br>
+
+        <label for="local">Local do Evento:</label>
+        <input type="text" id="local" name="local" required><br><br>
+
+        <label for="city">Cidade do Evento:</label>
+        <input type="text" name="city" id="city" required><br><br>
+
+        <label for="start-time">Hora de Início:</label>
+        <input type="time" id="start-time" name="start-time" required><br><br>
+
+        <label for="end-time">Hora de Término:</label>
+        <input type="time" id="end-time" name="end-time" required><br><br>
+
+        <label for="EstimativaDeConvidados">Estimativa de Convidados:</label>
+        <input type="number" name="EstimativaDeConvidados" id="EstimativaDeConvidados" required min="1"><br><br>
+
+        <label for="tipoEquipamento">Tipo do Equipamento:</label>
+        <select id="tipoEquipamento" name="tipoEquipamento" required>
+            <option value="conference">Conference</option>
+            <option value="workshop">Workshop</option>
+            <option value="seminar">Seminar</option>
+        </select><br><br>
+
+        <input type="button" onclick="enviarFormularioWhatsapp()" value="Registrar">
+    </form>
+</body>
+
+</html>

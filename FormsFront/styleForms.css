@@ -1,0 +1,117 @@
+/* Resetando margens e padding da página */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo do corpo da página */
+body {
+    display: flex;
+    flex-direction: column; /* Garante que o h1 fique em cima do formulário */
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    min-height: 100vh; /* Preenche a altura total da tela */
+    background-color: #f4f4f9; /* Cor de fundo suave */
+    font-family: 'Arial', sans-serif; /* Fonte mais amigável */
+}
+
+/* Estilo para o título */
+h1 {
+    text-align: center;
+    margin-bottom: 30px; /* Espaço entre o título e o formulário */
+    color: #333;
+    font-size: 24px;
+    padding-top: 20px;
+}
+
+/* Container do formulário */
+form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px; /* Limita o tamanho do formulário */
+    text-align: left; /* Alinha as perguntas à esquerda */
+}
+
+/* Estilo dos labels */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #555;
+}
+
+/* Estilo para inputs de texto e outros campos */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="time"],
+select,
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px; /* Espaçamento entre os campos */
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #555;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+}
+
+/* Efeito de foco para os campos */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+input[type="time"]:focus,
+select:focus,
+input[type="number"]:focus {
+    border-color: #4e6e81;
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(78, 110, 129, 0.3);
+}
+
+/* Estilo do botão de envio */
+input[type="button"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #4e6e81;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #3b4e61;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    form {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    input[type="time"],
+    select,
+    input[type="number"],
+    input[type="submit"] {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
