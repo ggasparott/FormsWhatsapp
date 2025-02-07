@@ -13,7 +13,7 @@ function enviarFormularioWhatsapp() {
     var guests = document.getElementById("EstimativaDeConvidados").value;
     var equipment = document.getElementById("tipoEquipamento").value;
 
-    // 🔴 Validações
+    //  Validações
 
     // Validação do nome
     if (name === "") {
@@ -57,7 +57,7 @@ function enviarFormularioWhatsapp() {
                   `👥 *Convidados:* ${guests}\n` +
                   `🎤 *Equipamento:* ${equipment}`;
 
-    var whatsappUrl = `https://api.whatsapp.com/send?phone=5519992590679&text=${encodeURIComponent(message)}`;
+    var whatsappUrl = `https://api.whatsapp.com/send?phone=19995259933&text=${encodeURIComponent(message)}`;
 
     // 🔹 Abre o WhatsApp com os dados preenchidos
     window.open(whatsappUrl, '_blank');
