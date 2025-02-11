@@ -29,11 +29,7 @@
         <input type="tel" id="phone" name="phone" required placeholder="(XX) XXXX-XXXX"><br><br>
 
         <label for="event">Evento:</label>
-        <select id="event" name="event" required>
-            <option value="conference">Conference</option>
-            <option value="workshop">Workshop</option>
-            <option value="seminar">Seminar</option>
-        </select><br><br>
+        <input type="text" id="event" name="event" required placeholder="Qual será o evento?"><br><br>
 
         <label for="date">Data do Evento:</label>
         <input type="date" id="date" name="date" required><br><br>
@@ -55,9 +51,12 @@
 
         <label for="tipoEquipamento">Tipo do Equipamento:</label>
         <select id="tipoEquipamento" name="tipoEquipamento" required>
-            <option value="conference">Conference</option>
-            <option value="workshop">Workshop</option>
-            <option value="seminar">Seminar</option>
+            <option value="tunelInfinity">Túnel infinity</option>
+            <option value="fotosImpress">Fotos impressas</option>
+            <option value="plataform">Plataforma 360°</option>
+            <option value="tunelLed">Túnel inclinado Led</option>
+            <option value="pistaLed">Pista de Led</option>
+            <option value="camera360">Câmera 360°</option>
         </select><br><br>
 
         <input type="button" onclick="enviarFormularioWhatsapp()" value="Registrar">
