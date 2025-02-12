@@ -5,62 +5,108 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Evento</title>
-    <link rel="stylesheet" href="styleForms.css">
-    <script src="script.js"></script>
 
+    <!-- Link para o Bootstrap (CSS) -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEJZ3QhqLMpG8r+KnujscA8m8/3X5L5tiXz5Yy0z5iwK3L7H/sjTL7lU0jXa3" crossorigin="anonymous">
+    
+    <script src="scriptForms.js"></script>
 </head>
 
 <body>
-    <h1>Registro de Eventos</h1>
-    <form action="/submit" method="post">
-        <label for="name">Nome*:</label>
-        <input type="text" id="name" name="name" required><br><br>
+    <div class="container my-5">
+        <h1 class="text-center mb-4">Registro de Eventos</h1>
+        <form action="/submit" method="post">
+            <div class="mb-3">
+                <label for="name" class="form-label">Nome*</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
 
+            <div class="mb-3">
+                <label for="email" class="form-label">Email*</label>
+                <input type="email" class="form-control" id="email" name="email" required placeholder="exemplo@dominio.com">
+            </div>
 
-        <label for="email">Email*:</label>
-        <input type="email" id="email" name="email" required placeholder="exemplo@dominio.com"
-            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$" oninput=""><br><br>
-            
-        <label for="confirm-email">Confirme seu Email*:</label>
-        <input type="email" id="confirm-email" name="confirm-email" required placeholder="exemplo@dominio.com"
-            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$"  ><br><br>
+            <div class="mb-3">
+                <label for="confirm-email" class="form-label">Confirme seu Email*</label>
+                <input type="email" class="form-control" id="confirm-email" name="confirm-email" required placeholder="exemplo@dominio.com">
+            </div>
 
-        <label for="phone">Número de Telefone:</label>
-        <input type="tel" id="phone" name="phone" required placeholder="(XX) XXXX-XXXX"><br><br>
+            <div class="mb-3">
+                <label for="phone" class="form-label">Número de Telefone</label>
+                <input type="tel" class="form-control" id="phone" name="phone" placeholder="(XX) XXXX-XXXX">
+            </div>
 
-        <label for="event">Evento:</label>
-        <input type="text" id="event" name="event" required placeholder="Qual será o evento?"><br><br>
+            <div class="mb-3">
+                <label for="event" class="form-label">Evento</label>
+                <input type="text" class="form-control" id="event" name="event" required placeholder="Qual será o evento?">
+            </div>
 
-        <label for="date">Data do Evento:</label>
-        <input type="date" id="date" name="date" required><br><br>
+            <div class="mb-3">
+                <label for="date" class="form-label">Data do Evento</label>
+                <input type="date" class="form-control" id="date" name="date" required>
+            </div>
 
-        <label for="local">Local do Evento:</label>
-        <input type="text" id="local" name="local" required><br><br>
+            <div class="mb-3">
+                <label for="local" class="form-label">Local do Evento</label>
+                <input type="text" class="form-control" id="local" name="local" required>
+            </div>
 
-        <label for="city">Cidade do Evento:</label>
-        <input type="text" name="city" id="city" required><br><br>
+            <div class="mb-3">
+                <label for="city" class="form-label">Cidade do Evento</label>
+                <input type="text" class="form-control" name="city" id="city" required>
+            </div>
 
-        <label for="start-time">Hora de Início:</label>
-        <input type="time" id="start-time" name="start-time" required><br><br>
+            <div class="mb-3">
+                <label for="start-time" class="form-label">Hora de Início</label>
+                <input type="time" class="form-control" id="start-time" name="start-time" required>
+            </div>
 
-        <label for="end-time">Hora de Término:</label>
-        <input type="time" id="end-time" name="end-time" required><br><br>
+            <div class="mb-3">
+                <label for="end-time" class="form-label">Hora de Término</label>
+                <input type="time" class="form-control" id="end-time" name="end-time" required>
+            </div>
 
-        <label for="EstimativaDeConvidados">Estimativa de Convidados:</label>
-        <input type="number" name="EstimativaDeConvidados" id="EstimativaDeConvidados" required min="1"><br><br>
+            <div class="mb-3">
+                <label for="EstimativaDeConvidados" class="form-label">Estimativa de Convidados</label>
+                <input type="number" class="form-control" name="EstimativaDeConvidados" id="EstimativaDeConvidados" required min="1">
+            </div>
 
-        <label for="tipoEquipamento">Tipo do Equipamento:</label>
-        <select id="tipoEquipamento" name="tipoEquipamento" required>
-            <option value="tunelInfinity">Túnel infinity</option>
-            <option value="fotosImpress">Fotos impressas</option>
-            <option value="plataform">Plataforma 360°</option>
-            <option value="tunelLed">Túnel inclinado Led</option>
-            <option value="pistaLed">Pista de Led</option>
-            <option value="camera360">Câmera 360°</option>
-        </select><br><br>
+            <fieldset class="mb-3">
+                <legend class="form-label">Tipo do Equipamento</legend>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="tunelInfinity" name="tipoEquipamento" value="Túnel Infinity">
+                    <label class="form-check-label" for="tunelInfinity">Túnel Infinity</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="fotosImpress" name="tipoEquipamento" value="Fotos Impressas">
+                    <label class="form-check-label" for="fotosImpress">Fotos Impressas</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="plataform" name="tipoEquipamento" value="Plataforma 360°">
+                    <label class="form-check-label" for="plataform">Plataforma 360°</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="tunelLed" name="tipoEquipamento" value="Túnel Inclinado Led">
+                    <label class="form-check-label" for="tunelLed">Túnel Inclinado Led</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="pistaLed" name="tipoEquipamento" value="Pista de Led">
+                    <label class="form-check-label" for="pistaLed">Pista de Led</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="camera360" name="tipoEquipamento" value="Câmera 360°">
+                    <label class="form-check-label" for="camera360">Câmera 360°</label>
+                </div>
+            </fieldset>
 
-        <input type="button" onclick="enviarFormularioWhatsapp()" value="Registrar">
-    </form>
+            <button type="button" class="btn btn-primary w-100" onclick="enviarFormularioWhatsapp()">Registrar</button>
+        </form>
+    </div>
+
+    <!-- Scripts do Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
