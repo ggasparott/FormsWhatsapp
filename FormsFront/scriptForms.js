@@ -11,7 +11,7 @@ function enviarFormularioWhatsapp() {
     var startTime = document.getElementById("start-time").value;
     var endTime = document.getElementById("end-time").value;
     var guests = document.getElementById("EstimativaDeConvidados").value;
-    var equipment = document.getElementById("tipoEquipamento").value;
+    var equipment = obterSelecionados().trim();
 
     //  Validações
 
@@ -55,7 +55,7 @@ function enviarFormularioWhatsapp() {
                   `📍 *Local:* ${local}, ${city}\n` +
                   `⏰ *Horário:* ${startTime} - ${endTime}\n` +
                   `👥 *Convidados:* ${guests}\n` +
-                  `🎤 *Equipamento:* ${equipment}`;
+                  `🎤 *Equipamentos:* ${equipment}`;
 
     var whatsappUrl = `https://api.whatsapp.com/send?phone=19995259933&text=${encodeURIComponent(message)}`;
 
@@ -63,14 +63,20 @@ function enviarFormularioWhatsapp() {
     window.open(whatsappUrl, '_blank');
 }
 
-// 🔹 Função para validar email
+//  Função para validar email
 function validarEmail(email) {
     var emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return emailRegex.test(email);
 }
 
-// 🔹 Função para validar telefone (mínimo 10 dígitos)
+//  Função para validar telefone (mínimo 10 dígitos)
 function validarTelefone(phone) {
     var phoneRegex = /^\d{10,11}$/;
     return phoneRegex.test(phone.replace(/\D/g, "")); // Remove caracteres não numéricos
+}
+
+function obterSelecionados() {
+    let checkboxes = document.querySelectorAll('input[name="tipoEquipamento"]:checked');
+    let valoresSelecionados = Array.from(checkboxes).map(cb => cb.value);
+    return valoresSelecionados.join(", "); // Retorna os valores separados por vírgula
 }
