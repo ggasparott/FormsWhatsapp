@@ -115,3 +115,41 @@ input[type="submit"]:hover {
         padding: 10px;
     }
 }
+
+/* Estilizando o checkbox */
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    accent-color: #007BFF; /* Cor personalizada para o checkbox */
+}
+
+/* Estilizando o texto do label */
+input[type="checkbox"] + label {
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Alterando o estilo quando o checkbox é marcado */
+input[type="checkbox"]:checked + label {
+    color: #007BFF; /* Cor do texto ao selecionar */
+    font-weight: bold;
+}
+
+/* Estilo para organizar os checkboxes em 2 colunas */
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap; /* Permite que quebre para a próxima linha */
+    gap: 15px; /* Espaço entre os checkboxes */
+    margin-bottom: 15px;
+}
+
+.checkbox-group div {
+    flex: 1 1 45%; /* Controla a largura de cada grupo de checkboxes (aproximadamente 50%) */
+}
+
+/* Para garantir que os checkboxes fiquem alinhados corretamente */
+.checkbox-group div input[type="checkbox"] {
+    margin-bottom: 10px; /* Espaço entre os checkboxes */
+}
