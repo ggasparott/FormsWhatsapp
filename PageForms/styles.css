@@ -63,7 +63,7 @@ section {
     margin: 50px 10%;
     padding: 25px;
     border-radius: 12px;
-    background: linear-gradient(to bottom, #4b0082, #0000ff);
+    background: linear-gradient(to bottom, #4b0082,#5a2dbc, #4907ff, #0000ff);
 }
 
 p {
